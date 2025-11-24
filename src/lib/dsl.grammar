@@ -7,13 +7,14 @@ Content { (Text | Reference | Italic | Bold )+ }
 Annotation {"%%" newline+ Note+ }
 Note { ">" Label whitespace Text }
 Glossary { "==" newline+ Gloss+ }
+Gloss { ">" Term+ }
 
 @tokens {
   Label { $[a-zA-Z0-9]+ }
   Text { ![\>\#\^\%\_\*\=]+ }
   Italic { "_" Text "_"}
   Bold { "*" Text "*"}
-  Gloss { "=" Text}
+  Term { "=" Text }
   newline { '\n' }
   whitespace { @whitespace }
   Reference { "^" Label }

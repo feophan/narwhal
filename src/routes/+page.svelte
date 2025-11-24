@@ -4,7 +4,7 @@
   import { layoutMode } from "$lib/stores";
 </script>
 
-<div class="flex justify-center gap-8 p-8 w-full">
+<div class="flex justify-center gap-8 px-6 w-full">
   {#if $layoutMode === "both"}
       <div class="flex-1 min-w-0">
         <Editor />

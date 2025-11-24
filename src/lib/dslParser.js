@@ -2,15 +2,15 @@
 import {LRParser} from "@lezer/lr"
 export const parser = LRParser.deserialize({
   version: 14,
-  states: "&lOQOPOOOVOPO'#C^OOOO'#Ck'#CkQQOPOOO[OPO,58xOOOO-E6i-E6iOOOO'#Cl'#ClOaOPO1G.dOOOO-E6j-E6jOiOPO'#C`OOOO'#Cm'#CmOnOPO7+$OO[OPO,58zOOOO-E6k-E6kOyOPO1G.fO!ROPO'#CaOOOO'#Cn'#CnO!WOPO7+$QO[OPO,58{OOOO-E6l-E6lO[OPO'#CgO[OPO'#CiOOOO<<Gl<<GlO!lOPO<<GlO!zOQO1G.gO#]OPO,59RO#eOPO,59TOOOOAN=WAN=WOOOO'#Co'#CoO#mOQO'#CbO$bOPO7+$ROOOO'#Cp'#CpO$yOPO1G.mO%[OPO'#CjOOOO'#Cq'#CqO%aOPO1G.oOOOO-E6m-E6mO%oOPO<<GmOOOO-E6n-E6nO&WOSO,59UOOOO-E6o-E6oO&]OQO1G.pOOOO7+$[7+$[",
-  stateData: "&e~OgPO~ORSO~OhUO~OhUOiXO~OR[O~OiXOfQqgQq~OhUOj_O~ORbO~Oj_OkdOleOfSqgSqiSq~OleOfSygSyiSy~OVlOWlOXlOYlOhUO~O[oOhUO~OhUOmqO~OVlOWlOXlOYlOfUXgUXhUXiUXjUXkUXlUX~OhUOfTqgTqiTqjTqkTqlTq~O[oOfZigZiiZilZi~ORwO~OmqOf]ig]ii]i~OhUOfTygTyiTyjTykTylTy~OnyO~OVzO~OVh~",
-  goto: "#efPPgPkosPPPPvPy!P!T!Z!u!{#R#X#_TQORTYVZT`^aRnhRgaQfaRkgTrjsQRORTRQVS[WV^hijuQ^[QhbQidQjeRunQZVR]ZQa^RcaQmhRtmQpiRvpQsjRxs",
-  nodeNames: "⚠ Book Chapter Label Section Language Content Text Reference Italic Bold Glossary Gloss Annotation Note",
-  maxTerm: 30,
+  states: "'UOQOPOOOVOPO'#C^OOOO'#Cl'#ClQQOPOOO[OPO,58xOOOO-E6j-E6jOOOO'#Cm'#CmOaOPO1G.dOOOO-E6k-E6kOiOPO'#C`OOOO'#Cn'#CnOnOPO7+$OO[OPO,58zOOOO-E6l-E6lOyOPO1G.fO!ROPO'#CaOOOO'#Co'#CoO!WOPO7+$QO[OPO,58{OOOO-E6m-E6mO[OPO'#CgO[OPO'#CjOOOO<<Gl<<GlO!lOPO<<GlO!zOQO1G.gO#]OPO,59RO#eOPO,59UOOOOAN=WAN=WOOOO'#Cp'#CpO#mOQO'#CbO$bOPO7+$RO$yOPO'#ChOOOO'#Cq'#CqO%OOPO1G.mO%aOPO'#CkOOOO'#Cs'#CsO%fOPO1G.pOOOO-E6n-E6nO%tOPO<<GmOOOO'#Cr'#CrO&]OPO,59SOOOO-E6o-E6oO&qOSO,59VOOOO-E6q-E6qOOOO-E6p-E6pO&vOQO1G.qOOOO7+$]7+$]",
+  stateData: "'O~OiPO~ORSO~OjUO~OjUOkXO~OR[O~OkXOhQqiQq~OjUOl_O~ORbO~Ol_OmdOoeOhSqiSqkSq~OoeOhSyiSykSy~OVlOWlOXlOYlOjUO~OjUOnoO~OjUOnrO~OVlOWlOXlOYlOhUXiUXjUXkUXlUXmUXoUX~OjUOhTqiTqkTqlTqmTqoTq~O]wO~OnoOhZiiZikZioZi~ORzO~OnrOh^ii^ik^i~OjUOhTyiTykTylTymTyoTy~O]wOh[ai[ak[an[ao[a~Op}O~OV!OO~OVj~",
+  goto: "#qhPPiPmquPPPPx{P!P!V!Z!a!{#R#X#_#e#kTQORTYVZT`^aRnhRgaTpiqQfaRkgTsjtQRORTRQVS[WV^hijvQ^[QhbQidQjeRvnQZVR]ZQa^RcaQmhRumQqiRyqQxoR|xQtjR{t",
+  nodeNames: "⚠ Book Chapter Label Section Language Content Text Reference Italic Bold Glossary Gloss Term Annotation Note",
+  maxTerm: 32,
   skippedNodes: [0],
-  repeatNodeCount: 7,
-  tokenData: "-_~R{OX#xXY$mYZ%^Z^$m^p#xpq$mqs#xst&Ptu#xuv&xvz#xz{'T{!Q#x!Q![(k![!_#x!_!`)n!`!a+W!a!c#x!c!}(k!}#Q#x#Q#R+]#R#S+w#S#T#x#T#o(k#o#y#x#y#z$m#z$f#x$f$g$m$g#BY#x#BY#BZ$m#BZ$IS#x$IS$I_$m$I_$I|#x$I|$JO$m$JO$JT#x$JT$JU$m$JU$KV#x$KV$KW$m$KW&FU#x&FU&FV$m&FV;'S#x;'S;=`$g<%lO#xQ#}WVQOs#xtu#xvz#x{!_#x!a#Q#x#S;'S#x;'S;=`$g<%lO#xQ$jP;=`<%l#xU$tWnSVQOs#xtu#xvz#x{!_#x!a#Q#x#S;'S#x;'S;=`$g<%lO#xV%gWnSVQhROs#xtu#xvz#x{!_#x!a#Q#x#S;'S#x;'S;=`$g<%lO#x~&SQpq&Yst&_~&_Og~~&bQpq&hst&m~&mOi~~&pPpq&s~&xOj~~&{Puv'O~'TOl~~'WWOs'ptu'pvz'p{!_'p!a#Q'p#S;'S'p;'S;=`(e<%lO'p~'sXOs'ptu'pvz'pz{(`{!_'p!a#Q'p#S;'S'p;'S;=`(e<%lO'p~(eOY~~(hP;=`<%l'pR(r^RPVQOs#xtu#xvz#x{!Q#x!Q![(k![!_#x!a!c#x!c!}(k!}#Q#x#S#T#x#T#o(k#o;'S#x;'S;=`$g<%lO#x~)qXOs*^tu*^vz*^{!_*^!_!`+R!a#Q*^#S;'S*^;'S;=`*{<%lO*^~*cW[~Os*^tu*^vz*^{!_*^!a#Q*^#S;'S*^;'S;=`*{<%lO*^~+OP;=`<%l*^~+WOk~~+]Om~~+`R!Q![+i!c!}+i#T#o+i~+nRW~!Q![+i!c!}+i#T#o+i~+zWOs,dtu,dvz,d{!_,d!a#Q,d#S;'S,d;'S;=`-X<%lO,d~,gXOs,dtu,dvz,d{!_,d!a#Q,d#R#S-S#S;'S,d;'S;=`-X<%lO,d~-XOX~~-[P;=`<%l,d",
+  repeatNodeCount: 8,
+  tokenData: "-_~R{OX#xXY$mYZ%^Z^$m^p#xpq$mqs#xst&Ptu#xuv&xvz#xz{'T{!Q#x!Q![(k![!_#x!_!`)n!`!a+W!a!c#x!c!}(k!}#Q#x#Q#R+]#R#S+w#S#T#x#T#o(k#o#y#x#y#z$m#z$f#x$f$g$m$g#BY#x#BY#BZ$m#BZ$IS#x$IS$I_$m$I_$I|#x$I|$JO$m$JO$JT#x$JT$JU$m$JU$KV#x$KV$KW$m$KW&FU#x&FU&FV$m&FV;'S#x;'S;=`$g<%lO#xQ#}WVQOs#xtu#xvz#x{!_#x!a#Q#x#S;'S#x;'S;=`$g<%lO#xQ$jP;=`<%l#xU$tWpSVQOs#xtu#xvz#x{!_#x!a#Q#x#S;'S#x;'S;=`$g<%lO#xV%gWpSVQjROs#xtu#xvz#x{!_#x!a#Q#x#S;'S#x;'S;=`$g<%lO#x~&SQpq&Yst&_~&_Oi~~&bQpq&hst&m~&mOk~~&pPpq&s~&xOl~~&{Puv'O~'TOo~~'WWOs'ptu'pvz'p{!_'p!a#Q'p#S;'S'p;'S;=`(e<%lO'p~'sXOs'ptu'pvz'pz{(`{!_'p!a#Q'p#S;'S'p;'S;=`(e<%lO'p~(eOY~~(hP;=`<%l'pR(r^RPVQOs#xtu#xvz#x{!Q#x!Q![(k![!_#x!a!c#x!c!}(k!}#Q#x#S#T#x#T#o(k#o;'S#x;'S;=`$g<%lO#x~)qXOs*^tu*^vz*^{!_*^!_!`+R!a#Q*^#S;'S*^;'S;=`*{<%lO*^~*cW]~Os*^tu*^vz*^{!_*^!a#Q*^#S;'S*^;'S;=`*{<%lO*^~+OP;=`<%l*^~+WOm~~+]On~~+`R!Q![+i!c!}+i#T#o+i~+nRW~!Q![+i!c!}+i#T#o+i~+zWOs,dtu,dvz,d{!_,d!a#Q,d#S;'S,d;'S;=`-X<%lO,d~,gXOs,dtu,dvz,d{!_,d!a#Q,d#R#S-S#S;'S,d;'S;=`-X<%lO,d~-XOX~~-[P;=`<%l,d",
   tokenizers: [0, 1, 2],
   topRules: {"Book":[0,1]},
-  tokenPrec: 248
+  tokenPrec: 273
 })

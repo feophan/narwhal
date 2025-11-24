@@ -6,6 +6,7 @@ import { dsl } from "$lib/dslLanguage";
 import { dslSyntaxHighlighting } from "$lib/dslHighlight";
 import { tree, editorText, uploadFlag } from "$lib/stores";
 import { treeToJSON } from "$lib/utils/treeParser";
+import { customKeymap } from "$lib/editor/keymap";
 
 // lint
 import { linter, lintGutter } from "@codemirror/lint";
@@ -27,6 +28,7 @@ onMount(() => {
     extensions: [
       basicSetup,
       themeCompartment.of(cmLightTheme), // initial theme
+      customKeymap, // custom key shortcuts
       EditorView.lineWrapping,
       dsl(),
       dslSyntaxHighlighting,

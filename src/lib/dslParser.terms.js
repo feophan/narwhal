@@ -12,5 +12,6 @@ export const
   Bold = 10,
   Glossary = 11,
   Gloss = 12,
-  Annotation = 13,
-  Note = 14
+  Term = 13,
+  Annotation = 14,
+  Note = 15

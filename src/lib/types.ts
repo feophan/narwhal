@@ -52,6 +52,12 @@ export interface Note extends Node {
   children: [Label, Text];
 }
 
+export interface Gloss extends Node {
+  type: "Gloss";
+  text: string;
+  children: Term[];
+}
+
 export interface Inline<T extends string = string> extends Node {
   type: T;
   text: string;
@@ -62,4 +68,4 @@ export type Text = Inline<"Text">;
 export type Reference = Inline<"Reference">;
 export type Italic = Inline<"Italic">;
 export type Bold = Inline<"Bold">;
-export type Gloss = Inline<"Gloss">;
+export type Term = Inline<"Term">;

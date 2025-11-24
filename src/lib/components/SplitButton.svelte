@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { MenuButton } from "$lib/components/ui/sidebar";
+  import { Button } from "$lib/components/ui/button";
   import SpliScreenIcon from "@lucide/svelte/icons/between-vertical-start";
 
   import { layoutMode } from "$lib/stores";
@@ -11,16 +11,13 @@
   }
 </script>
 
-<MenuButton
-  tooltipContentProps={{
-    hidden: false,
-  }}
-  onclick={nextLayout}
-  class="px-2.5 md:px-2"
+<Button
+	variant="ghost"
+	size="icon"
+	class="h-7 w-7"
+	type="button"
+	onclick={nextLayout}
 >
-  {#snippet tooltipContent()}
-    Change view
-  {/snippet}
-  <SpliScreenIcon />
-  <span>Change view</span>
-</MenuButton>
+	<SpliScreenIcon />
+	<span class="sr-only">Toggle Sidebar</span>
+</Button>

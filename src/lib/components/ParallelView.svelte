@@ -48,7 +48,6 @@
 </script>
 
 {#if $tree?.children}
-{console.log(JSON.stringify($tree))}
 <Card>
   {#each $tree.children as chapter}
     {#each chapter.children as section}
@@ -102,7 +101,7 @@
             <Separator />
 
             <div
-              class="prose prose-sm dark:prose-invert max-w-none">
+              class="prose prose-sm dark:prose-invert max-w-none whitespace-pre-line">
               {@html renderContent(
                 lang.children.find(c => c.type === "Content")?.children || [],
                 annotations

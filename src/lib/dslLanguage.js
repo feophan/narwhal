@@ -18,6 +18,7 @@ export const dslLanguage = LRLanguage.define({
         "Note/Text": tags.lineComment,
         Glossary: tags.comment,
         Gloss: tags.comment,
+        Term: tags.comment,
         Annotation: tags.annotation,
         Reference: tags.link,
         Italic: tags.emphasis,

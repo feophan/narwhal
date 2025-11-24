@@ -2,8 +2,11 @@
 	import '../app.css';
   import "$lib/autosave";
   import { ModeWatcher } from "mode-watcher";
+  import { ScrollArea } from "$lib/components/ui/scroll-area/index.js";
   import AppSidebar from '$lib/components/CombinedSidebar.svelte';
   import LoginCard from "$lib/components/LoginCard.svelte";
+
+  import AppFrame from "$lib/components/AppFrame.svelte";
 
   // sidebar
   import * as Sidebar from "$lib/components/ui/sidebar/index.js";
@@ -22,11 +25,20 @@
 </script>
 
 <ModeWatcher />
-<Sidebar.Provider>
-  <AppSidebar />
-  <main class="min-w-0 w-full">
-    <Sidebar.Trigger />
-    <LoginCard />
-    {@render children?.()}
-  </main>
-</Sidebar.Provider>
+<div class="flex flex-col h-screen">
+  <!-- Sidebar + Main -->
+  <div class="flex flex-1 overflow-hidden">
+    <Sidebar.Provider>
+      <AppFrame />
+      <AppSidebar />
+      
+      <main class="flex-1 flex flex-col pt-8">
+        <ScrollArea class="h-full">
+            <LoginCard />
+            {@render children?.()}
+        </ScrollArea>
+      </main>
+    </Sidebar.Provider>
+  </div>
+</div>
+

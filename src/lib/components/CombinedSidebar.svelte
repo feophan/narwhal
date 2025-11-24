@@ -3,8 +3,6 @@
   import GlossaryIcon from "@lucide/svelte/icons/book-a";
   import OpenFolder from "$lib/components/OpenFolder.svelte";
   import CreateProject from "./CreateProject.svelte";
-  import SplitButton from "./SplitButton.svelte";
-  import ModeButton from "./ModeButton.svelte";
 
   import FileListItem from "./FileListItem.svelte";
 
@@ -69,7 +67,7 @@
 <Sidebar.Root
   bind:ref
   collapsible="icon"
-  class="overflow-hidden [&>[data-sidebar=sidebar]]:flex-row"
+  class="pt-8 overflow-hidden [&>[data-sidebar=sidebar]]:flex-row"
   {...restProps}
 >
   <!-- This is the first sidebar -->
@@ -101,12 +99,6 @@
                 </Sidebar.MenuButton>
               </Sidebar.MenuItem>
             {/each}
-            <Sidebar.MenuItem>
-              <SplitButton />
-            </Sidebar.MenuItem>
-            <Sidebar.MenuItem>
-              <ModeButton />
-            </Sidebar.MenuItem>
           </Sidebar.Menu>
         </Sidebar.GroupContent>
       </Sidebar.Group>

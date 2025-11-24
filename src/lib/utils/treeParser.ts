@@ -1,7 +1,7 @@
 import { parser } from "../dslParser.js";
 import type { Book, Node } from "../types.js";
 
-const INLINE_TYPES = new Set(["Label", "Text", "Reference", "Italic", "Bold", "Gloss"]);
+const INLINE_TYPES = new Set(["Label", "Text", "Reference", "Italic", "Bold", "Term"]);
 
 export function treeToJSON(input: string): Book {
   const tree = parser.parse(input);
@@ -39,7 +39,7 @@ export function treeToJSON(input: string): Book {
             if (childNode.type === "Note") node.children.push(childNode);
             break;
           case "Glossary":
-            if (INLINE_TYPES.has(childNode.type)) node.children.push(childNode);
+            if (childNode.type === "Gloss") node.children.push(childNode);
             break;
           default:
             node.children.push(childNode);
