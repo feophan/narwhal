@@ -3,6 +3,7 @@ import type { Book } from "$lib/types";
 
 import { LazyStore } from '@tauri-apps/plugin-store';
 import { readFolder } from "$lib/utils/readFolder";
+import { userPrefersMode } from "mode-watcher";
 
 // redo for JSON tree
 export const tree = writable<Book | null>(null);
@@ -47,4 +48,4 @@ export const workingFolder = writable<string | null>(null);
 
 // track editor mode
 export const layoutMode = writable<"editor" | "parallel" | "both">("both");
-export const theme = writable<"light" | "dark">("light")
+export const theme = writable<"light" | "dark">(userPrefersMode.current === "dark" ? "dark" : "light");
