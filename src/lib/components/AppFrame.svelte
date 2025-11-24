@@ -56,11 +56,3 @@
     </Button>
   </div>
 </div>
-
-<style>
-  /* optional: prevent text selection in the title bar */
-  .titlebar {
-    -webkit-user-select: none;
-    user-select: none;
-  }
-</style>
