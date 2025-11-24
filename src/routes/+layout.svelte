@@ -9,6 +9,16 @@
   import * as Sidebar from "$lib/components/ui/sidebar/index.js";
  
   let { children } = $props();
+
+  import { layoutMode, windowWidth } from "$lib/stores";
+
+  const MIN_BOTH_WIDTH = 1100; // adjust as needed
+
+  $effect(() => {
+    if ($windowWidth < MIN_BOTH_WIDTH && $layoutMode === "both") {
+      layoutMode.set("editor");
+    }
+  });
 </script>
 
 <ModeWatcher />

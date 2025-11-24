@@ -48,6 +48,7 @@
 </script>
 
 {#if $tree?.children}
+{console.log(JSON.stringify($tree))}
 <Card>
   {#each $tree.children as chapter}
     {#each chapter.children as section}
