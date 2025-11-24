@@ -42,7 +42,7 @@ A section can include a glossary. Glossary is collected over the whole document 
 
 ```
 ==
-= word in language 1 = word in language 2 = word in language 3
+>= word in language 1 = word in language 2 = word in language 3
 ```
 
 The glossary has to precede annotation. It can include any number of translations, but only first two are collected into the table.
