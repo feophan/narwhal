@@ -131,32 +131,6 @@
   gap: 0.5rem;
 }
 
-.parallel {
-  display: grid;
-  gap: 0.5rem;
-  padding: 0.5rem;
-  border-top: 1px solid #eee;
-  align-items: start;
-}
-
-.block-label {
-  font-weight: 600;
-  font-size: 0.85rem;
-  padding: 0.5rem;
-  white-space: nowrap;
-  display: flex;
-  align-items: flex-start;
-}
-
-
-.col {
-  background: #f9f9f9;
-  padding: 0.5rem;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  line-height: 1.2;
-}
-
 h4 {
   margin: 0 0 0.25rem 0;
   font-size: 0.85rem;
@@ -168,17 +142,4 @@ h4 {
   cursor: pointer;
 }
 
-.panel-title {
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-align: left;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #ddd;
-}
-
-.text {
-  white-space: pre-line;
-  margin: 0;
-}
 </style>
