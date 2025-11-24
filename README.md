@@ -1,38 +1,72 @@
-# sv
+A lightweight editor for writing and processing text files storing parallel translations.
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+The app scans a selected folder for `.ptm` files, and presents them in two modes: code editor and side-by-side rendered text.
 
-## Creating a project
+## Format
 
-If you're seeing this, you've probably already done this step. Congrats!
+The PTM format is largely inspired by QTML, but opts for minimum verbosity. The markdown-like text is parsed into a JSON tree of the following structure:
 
-```sh
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+```
+book
+|
++-- chapter
+|   |
+|   +-- section
+|   |   |
+|   |   +-- language 1
+|   |   +-- language 2
+|   |   +-- glossary
+|   |   +-- notes
+|   |
+|   +-- section
++-- chapter
 ```
 
-## Developing
+The file must containt the `chapter`, `section` and `language` nodes, but `glossary` and `annotation` are optional.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+The basic syntax of the file then looks like this:
 
-```sh
-npm run dev
+```md
+# chapter-id
+## section-id
+### language-1-id
+Text in language 1.
+### language-2-id
+Text in language 2.
+```
+There must be a space between node tokens `#, ##, ###` and their label, and the labels cannot (yet) include spaces. An empty line between nodes and within a text is allowed.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+### Glossary
+
+A section can include a glossary. Glossary is collected over the whole document and is compiled into a table.
+
+```
+==
+= word in language 1 = word in language 2 = word in language 3
 ```
 
-## Building
+The glossary has to precede annotation. It can include any number of translations, but only first two are collected into the table.
 
-To create a production version of your app:
+### Annotations
 
-```sh
-npm run build
+A word in a block can have an annotation attached to it:
+
+```
+This word^1 has an annotation with label 1.
 ```
 
-You can preview the production build with `npm run preview`.
+Then the content of that annotation is declared in the annotation node:
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+```
+%%
+>1 this is the text of the annotation 1
+```
+
+Annotation labels should be unique within a section, but can be re-used:
+
+```
+### language-1
+Some word^1 that has annotation.
+### language-2
+Translated word^1 that has the same annotation to it.
+```
