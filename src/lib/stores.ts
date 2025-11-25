@@ -3,7 +3,6 @@ import type { Book } from "$lib/types";
 
 import { LazyStore } from '@tauri-apps/plugin-store';
 import { readFolder } from "$lib/utils/readFolder";
-import { userPrefersMode } from "mode-watcher";
 
 // redo for JSON tree
 export const tree = writable<Book | null>(null);
@@ -45,19 +44,3 @@ export const workingFolder = writable<string | null>(null);
     await store.set("cwd", value);
     await store.save(); // commit to disk
   });
-
-// track editor mode
-export const layoutMode = writable<"editor" | "parallel" | "both">("both");
-export const theme = writable<"light" | "dark">(userPrefersMode.current === "dark" ? "dark" : "light");
-
-// track window size
-export const windowWidth = writable(
-  typeof window !== "undefined" ? window.innerWidth : 1000
-);
-
-// Update on resize
-if (typeof window !== "undefined") {
-  window.addEventListener("resize", () => {
-    windowWidth.set(window.innerWidth);
-  });
-}

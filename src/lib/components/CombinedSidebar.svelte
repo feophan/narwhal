@@ -1,10 +1,13 @@
 <script lang="ts" module>
   import ProjectIcon from "@lucide/svelte/icons/clipboard-list";
   import GlossaryIcon from "@lucide/svelte/icons/book-a";
+  import SearchIcon from "@lucide/svelte/icons/folder-search";
   import OpenFolder from "$lib/components/OpenFolder.svelte";
   import CreateProject from "./CreateProject.svelte";
 
   import FileListItem from "./FileListItem.svelte";
+
+  import SearchBar from "./SearchBar.svelte";
 
   // menu list
   const menu = {
@@ -19,6 +22,12 @@
         title: "Glossary",
         url: "#",
         icon: GlossaryIcon,
+        isActive: false,
+      },
+      {
+        title: "Search",
+        url: "#",
+        icon: SearchIcon,
         isActive: false,
       }
     ],
@@ -137,6 +146,11 @@
             <Sidebar.Menu>
               <Sidebar.Input placeholder="Type to search..." bind:value={search} />
               <GlossaryTable {search} />
+            </Sidebar.Menu>
+          {:else if activeItem.title === "Search"}
+            <!-- Show glossary table -->
+            <Sidebar.Menu>
+              <SearchBar />
             </Sidebar.Menu>
           {/if}
         </Sidebar.GroupContent>

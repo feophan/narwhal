@@ -4,7 +4,7 @@
  
  import { toggleMode, userPrefersMode } from "mode-watcher";
  import { Button } from "$lib/components/ui/button";
- import { theme } from "$lib/stores";
+ import { theme } from "$lib/stores/ui";
 
  function switchMode() {
   userPrefersMode.current === "dark" ? theme.set("light") : theme.set("dark");

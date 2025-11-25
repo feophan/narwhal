@@ -13,7 +13,7 @@
  
   let { children } = $props();
 
-  import { layoutMode, windowWidth } from "$lib/stores";
+  import { layoutMode, windowWidth } from "$lib/stores/ui";
 
   const MIN_BOTH_WIDTH = 1100; // adjust as needed
 

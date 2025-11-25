@@ -1,7 +1,7 @@
 <script>
   import Editor from '$lib/components/Editor.svelte';
   import ParallelView from '$lib/components/ParallelView.svelte';
-  import { layoutMode } from "$lib/stores";
+  import { layoutMode } from "$lib/stores/ui";
 </script>
 
 <div class="flex justify-center gap-8 px-6 w-full">

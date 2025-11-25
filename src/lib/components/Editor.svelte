@@ -16,7 +16,7 @@ import { dslLinter } from "$lib/dslLinter";
 // mode switching
 
 import { cmLightTheme, cmDarkTheme, themeCompartment } from "$lib/editor/theme";
-import { theme } from "$lib/stores";
+import { theme } from "$lib/stores/ui";
 //
 
 let parent: HTMLDivElement;

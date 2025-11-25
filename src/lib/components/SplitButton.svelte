@@ -2,7 +2,7 @@
   import { Button } from "$lib/components/ui/button";
   import SpliScreenIcon from "@lucide/svelte/icons/between-vertical-start";
 
-  import { layoutMode } from "$lib/stores";
+  import { layoutMode } from "$lib/stores/ui";
 
   function nextLayout() {
     const order = ["both", "editor", "parallel"] as const;
