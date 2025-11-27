@@ -79,45 +79,45 @@
           return map;
         })()}
 
-        <div class="parallel-container">
-  <Card class="w-full shadow-sm">
-    <CardContent class="p-4">
-      <div
-        class="grid gap-6"
-        style={`grid-template-columns: auto repeat(${langs.length}, 1fr);`}
-      >
-        <!-- Block label column -->
-        <div class="flex items-start justify-start text-sm font-medium text-muted-foreground pr-4">
-          {blockLabel?.text}
-        </div>
+          <Card class="w-full shadow-sm">
+            <CardContent class="p-4">
+              <!-- Outer grid: label + content column -->
+              <div class="grid gap-6 grid-cols-[auto,1fr]">
+                <!-- Block label column -->
+                <div class="flex items-start justify-start text-sm font-medium text-muted-foreground pr-4">
+                  {blockLabel?.text}
+                </div>
 
-        <!-- Language columns -->
-        {#each langs as lang}
-          <div class="flex flex-col gap-2">
-            <h4 class="text-base font-semibold leading-none tracking-tight">
-              {lang.children.find(c => c.type === "Label")?.text}
-            </h4>
+                <!-- Content column: allow shrinking -->
+                <div class="min-w-0">
+                  <!-- Inner grid: auto-fit language cards -->
+                  <div
+                    class="grid gap-6"
+                    style="grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));"
+                  >
+                    {#each langs as lang}
+                      <div class="flex flex-col gap-2">
+                        <h4 class="text-base font-semibold leading-none tracking-tight">
+                          {lang.children.find(c => c.type === "Label")?.text}
+                        </h4>
 
-            <Separator />
+                        <Separator />
 
-            <div
-              class="prose prose-sm dark:prose-invert max-w-none whitespace-pre-line">
-              {@html renderContent(
-                lang.children.find(c => c.type === "Content")?.children || [],
-                annotations
-              )}
-            </div>
-          </div>
-        {/each}
-      </div>
-    </CardContent>
-  </Card>
-</div>
+                        <div class="prose prose-sm dark:prose-invert max-w-none whitespace-pre-line">
+                          {@html renderContent(
+                            lang.children.find(c => c.type === "Content")?.children || [],
+                            annotations
+                          )}
+                        </div>
+                      </div>
+                    {/each}
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </CardContent>
       {/if}
-
-
-
     {/each}
   {/each}
 </Card>
@@ -125,17 +125,7 @@
 
 
 <style>
-.parallel-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
 
-h4 {
-  margin: 0 0 0.25rem 0;
-  font-size: 0.85rem;
-  font-weight: 600;
-}
 
 :global(.ref) {
   color: #555;
