@@ -3,7 +3,6 @@
   import * as AlertDialog from "$lib/components/ui/alert-dialog/index.js";
   import { Input } from "$lib/components/ui/input/index.js";
   import { remove, rename } from '@tauri-apps/plugin-fs';
-  import { join } from '@tauri-apps/api/path';
 
   export let file: { name: string; path: string };
 

@@ -2,10 +2,12 @@
   import ProjectIcon from "@lucide/svelte/icons/clipboard-list";
   import GlossaryIcon from "@lucide/svelte/icons/book-a";
   import SearchIcon from "@lucide/svelte/icons/folder-search";
+  import ListIcon from "@lucide/svelte/icons/list";
   import OpenFolder from "$lib/components/OpenFolder.svelte";
   import CreateProject from "./CreateProject.svelte";
 
   import FileListItem from "./FileListItem.svelte";
+  import TOCList from "./TOCList.svelte";
 
   import SearchBar from "./SearchBar.svelte";
 
@@ -29,11 +31,17 @@
         url: "#",
         icon: SearchIcon,
         isActive: false,
+      },
+      {
+        title: "Content",
+        url: "#",
+        icon: ListIcon,
+        isActive: false,
       }
     ],
   };
 
-  import {ptmFiles, editorText, uploadFlag, currentProject, tree} from "$lib/stores";
+  import {ptmFiles, editorText, uploadFlag, currentProject} from "$lib/stores";
   import { readTextFile } from '@tauri-apps/plugin-fs';
 
   import GlossaryTable from '$lib/components/GlossaryTable.svelte';
@@ -132,7 +140,7 @@
         <Sidebar.GroupContent>
           {#if activeItem.title === "Projects"}
             <!-- Show file list -->
-            <Sidebar.Menu>
+            <Sidebar.Menu class="p-2">
               {#each $ptmFiles as file (file.path)}
                 <Sidebar.MenuItem>
                   <Sidebar.MenuButton onclick={() => openFile(file.path)}>
@@ -151,6 +159,11 @@
             <!-- Show glossary table -->
             <Sidebar.Menu>
               <SearchBar />
+            </Sidebar.Menu>
+          {:else if activeItem.title === "Content"}
+            <!-- Show glossary table -->
+            <Sidebar.Menu>
+              <TOCList />
             </Sidebar.Menu>
           {/if}
         </Sidebar.GroupContent>

@@ -1,18 +1,21 @@
 import { parser } from "../dslParser.js";
 import type { Book, Node } from "../types.js";
+import type { Text } from "@codemirror/state";
 
 const INLINE_TYPES = new Set(["Label", "Text", "Reference", "Italic", "Bold", "Term"]);
 
-export function treeToJSON(input: string): Book {
+export function treeToJSON(doc: Text): Book {
+  const input = doc.toString();
   const tree = parser.parse(input);
 
   function nodeToJSON(cursor: any): Node {
     const type = cursor.type.name;
+    let line = doc.lineAt(cursor.from).number;
 
     // Only inline nodes store text
     const node: any = INLINE_TYPES.has(type)
-      ? { type, text: input.slice(cursor.from, cursor.to) }
-      : { type, children: [] };
+      ? { type, text: input.slice(cursor.from, cursor.to), line }
+      : { type, children: [], line };
 
     if (!INLINE_TYPES.has(type) && cursor.firstChild()) {
       do {

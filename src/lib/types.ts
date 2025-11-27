@@ -2,6 +2,7 @@ export interface Node {
   type: string;
   text: string;
   children?: Node[];
+  line: number;
 }
 
 export interface Book extends Node {

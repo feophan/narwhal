@@ -44,3 +44,5 @@ export const workingFolder = writable<string | null>(null);
     await store.set("cwd", value);
     await store.save(); // commit to disk
   });
+
+  export const lineNum = writable<number | null>(null);

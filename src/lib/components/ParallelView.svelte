@@ -54,7 +54,7 @@
 
       {#if section.type === "Label"}
         <CardHeader>
-          <h2 class="text-lg font-bold">{section.text}</h2>
+          <h2 id={`line-${chapter.line}`} class="text-lg font-bold">{section.text}</h2>
         </CardHeader>
 
       {:else if section.type === "Section"}
@@ -84,7 +84,7 @@
               <!-- Outer grid: label + content column -->
               <div class="grid gap-6 grid-cols-[auto,1fr]">
                 <!-- Block label column -->
-                <div class="flex items-start justify-start text-sm font-medium text-muted-foreground pr-4">
+                <div id={`line-${section.line}`} class="flex items-start justify-start text-sm font-medium text-muted-foreground pr-4">
                   {blockLabel?.text}
                 </div>
 

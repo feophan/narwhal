@@ -4,7 +4,7 @@ import { EditorView, basicSetup } from "codemirror";
 import { EditorState } from "@codemirror/state";
 import { dsl } from "$lib/dslLanguage";
 import { dslSyntaxHighlighting } from "$lib/dslHighlight";
-import { tree, editorText, uploadFlag } from "$lib/stores";
+import { tree, editorText, uploadFlag, lineNum } from "$lib/stores";
 import { treeToJSON } from "$lib/utils/treeParser";
 import { customKeymap } from "$lib/editor/keymap";
 
@@ -35,9 +35,10 @@ onMount(() => {
       lintGutter(),
       linter(dslLinter),
       EditorView.updateListener.of((update) => {
-          const newBlocks = treeToJSON(update.state.doc.toString());
+          let body = update.state.doc;
+          const newBlocks = treeToJSON(body);
           tree.set(newBlocks);
-          editorText.set(update.state.doc.toString());
+          editorText.set(body.toString());
       }),
     ],
   });
@@ -60,8 +61,21 @@ onMount(() => {
     });
     uploadFlag.set(false);
     };
-  })
-});
+  });
+
+  lineNum.subscribe((num) => {
+    if (!editor) return;
+    if (num) {
+      let lineInfo = editor.state.doc.line(num);
+      let offset = lineInfo.from;
+      editor.dispatch({
+        effects: EditorView.scrollIntoView(offset, { y: "start" })
+      });
+      // also ensure the editor itself is visible in the page
+      // parent.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+    });
+  });
 </script>
 
 <div bind:this={parent} class="editor"></div>
