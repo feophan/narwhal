@@ -22,7 +22,8 @@ export const dslLanguage = LRLanguage.define({
         Annotation: tags.annotation,
         Reference: tags.link,
         Italic: tags.emphasis,
-        Bold: tags.strong
+        Bold: tags.strong,
+        Doubt: tags.literal
       })
     ]
   }),

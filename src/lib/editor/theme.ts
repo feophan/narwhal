@@ -38,15 +38,18 @@ export const cmDarkTheme = EditorView.theme({
     backgroundColor: "#1e40af", // bg-blue-900
   },
     ".ͼs": {
-    color: "#CCCCCC",
+    color: "#CCCCCC", // text
   },
     ".ͼu": {
-    color: "#21d441ff",
+    color: "#21d441ff", // glossary
   },
-    ".ͼr": {
-    color: "#0088FF",
+    ".ͼq, .ͼp, .ͼo": {
+    color: "#0088FF", // header
   },
     ".ͼw": {
-    color: "#FFEE80",
+    color: "#FFEE80", // comment
+  },
+    ".ͼz": {
+    color: "#e7000b", // doubt
   }
 }, { dark: true });

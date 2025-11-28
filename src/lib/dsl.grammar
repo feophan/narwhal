@@ -3,7 +3,7 @@
 Chapter { "# " Label newline+ Section+ }
 Section { "## " Label newline+ Language+ Glossary? Annotation? }
 Language { "### " Label newline+ Content newline* }
-Content { (Text | Reference | Italic | Bold )+ }
+Content { (Text | Reference | Italic | Bold | Doubt )+ }
 Annotation {"%%" newline+ Note+ }
 Note { ">" Label whitespace Text }
 Glossary { "==" newline+ Gloss+ }
@@ -11,10 +11,11 @@ Gloss { ">" Term+ }
 
 @tokens {
   Label { $[a-zA-Z0-9]+ }
-  Text { ![\>\#\^\%\_\*\=]+ }
-  Italic { "_" Text "_"}
-  Bold { "*" Text "*"}
+  Text { ![\>\#\^\%\_\*\=\{\}]+ }
+  Italic { "_" Text "_" }
+  Bold { "*" Text "*" }
   Term { "=" Text }
+  Doubt { "{" Text "}" }
   newline { '\n' }
   whitespace { @whitespace }
   Reference { "^" Label }

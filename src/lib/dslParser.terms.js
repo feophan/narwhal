@@ -10,8 +10,9 @@ export const
   Reference = 8,
   Italic = 9,
   Bold = 10,
-  Glossary = 11,
-  Gloss = 12,
-  Term = 13,
-  Annotation = 14,
-  Note = 15
+  Doubt = 11,
+  Glossary = 12,
+  Gloss = 13,
+  Term = 14,
+  Annotation = 15,
+  Note = 16

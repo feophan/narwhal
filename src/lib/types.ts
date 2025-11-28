@@ -69,4 +69,5 @@ export type Text = Inline<"Text">;
 export type Reference = Inline<"Reference">;
 export type Italic = Inline<"Italic">;
 export type Bold = Inline<"Bold">;
+export type Doubt = Inline<"Doubt">;
 export type Term = Inline<"Term">;

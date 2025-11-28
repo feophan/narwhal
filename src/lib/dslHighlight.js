@@ -13,6 +13,7 @@ export const dslHighlightStyle = HighlightStyle.define([
   { tag: t.link, color: "#888888" },
   { tag: t.strong, fontWeight: "bold" },
   { tag: t.emphasis, fontStyle: "italic" },
+  { tag: t.literal, color: "#891b08ff"}
 ])
 
 // ✅ Wrap the style in syntaxHighlighting to produce a Highlighter

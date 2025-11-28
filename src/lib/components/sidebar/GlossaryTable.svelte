@@ -6,8 +6,6 @@
 
   $: data = collectGlossary($tree);
 
-  console.log(data);
-
   export let search = "";
 
   // filtered results

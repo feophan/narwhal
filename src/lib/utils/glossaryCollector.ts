@@ -1,8 +1,8 @@
 import type { Book, Node } from "../types";
 
-export function collectGlossary(root: Book | null): [string, string][] {
-  let block = [];
-  const results = [];
+export function collectGlossary(root: Book | null): string[][] {
+  let block: string[] = [];
+  const results: string[][] = [];
 
   function walk(node: Node) {
     if (node.type === "Glossary" && node.children) {

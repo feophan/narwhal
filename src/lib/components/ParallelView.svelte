@@ -27,6 +27,9 @@
         case 'Bold':
           return `<strong>${escapeHTML(piece.text.slice(1, -1))}</strong>`; // remove * delimiters
 
+        case 'Doubt':
+          return `<span class="doubt">${escapeHTML(piece.text.slice(1, -1))}</span>`; // remove {} delimiters
+
         default:
           return escapeHTML(piece.text);
       }
@@ -130,6 +133,10 @@
 :global(.ref) {
   color: #555;
   cursor: pointer;
+}
+
+:global(.doubt) {
+  color: oklch(0.577 0.245 27.325);
 }
 
 </style>

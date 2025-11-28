@@ -2,7 +2,7 @@ import { parser } from "../dslParser.js";
 import type { Book, Node } from "../types.js";
 import type { Text } from "@codemirror/state";
 
-const INLINE_TYPES = new Set(["Label", "Text", "Reference", "Italic", "Bold", "Term"]);
+const INLINE_TYPES = new Set(["Label", "Text", "Reference", "Term", "Italic", "Bold", "Doubt"]);
 
 export function treeToJSON(doc: Text): Book {
   const input = doc.toString();
