@@ -70,3 +70,7 @@ Some word^1 that has annotation.
 ### language-2
 Translated word^1 that has the same annotation to it.
 ```
+
+### Inline formatting
+
+PTM supports `_word_` for _italic_ and `*word*` for **bold**. It also introduces `{word}` for uncertain terms that need to be checked later. Those are collected into a list accessible in the menu. 

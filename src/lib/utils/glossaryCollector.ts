@@ -1,16 +1,23 @@
 import type { Book, Node } from "../types";
 
 export function collectGlossary(root: Book | null): string[][] {
-  let block: string[] = [];
   const results: string[][] = [];
 
   function walk(node: Node) {
     if (node.type === "Glossary" && node.children) {
       for (const gloss of node.children) {
         if (gloss.children) {
-          for (const term of gloss.children) block.push(term.text.replace(/^=+/, "").trim());
-          results.push(block);
-          block = [];
+          const block: string[] = [];
+          for (const term of gloss.children) {
+            const text = term.text ?? "";
+            if (text.startsWith("=")) {
+              block.push(text.replace(/^=+/, "").trim());
+            }
+          }
+          // only add if we actually collected something
+          if (block.length > 0) {
+            results.push(block);
+          }
         }
       }
     }

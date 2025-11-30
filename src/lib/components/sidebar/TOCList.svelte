@@ -25,23 +25,27 @@
   <Collapsible.Root class="group/collapsible">
     <Collapsible.Trigger class="px-2">
       <MenuItem>
-        <MenuButton onclick={() => selectChapter(chapter.line)}>
-          {chapter.children[0].text}
-          <ChevronRightIcon
-        class="ms-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
-        </MenuButton>
+        {#if chapter.children && chapter.children[0]}
+          <MenuButton onclick={() => selectChapter(chapter.line)}>
+            {chapter.children[0].text}
+            <ChevronRightIcon
+              class="ms-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
+          </MenuButton>
+        {/if}
       </MenuItem>
     </Collapsible.Trigger>
     <Collapsible.Content>
         <MenuSub>
           {#each chapter.children as section}
-          {#if section.type === "Section"}
-          <MenuSubItem>
-            <MenuSubButton onclick={() => selectChapter(section.line)}>
-              {section.children[0].text}
-            </MenuSubButton>
-          </MenuSubItem>
-          {/if}
+            {#if section.type === "Section"}
+            <MenuSubItem>
+              {#if section.children && section.children[0]}
+                <MenuSubButton onclick={() => selectChapter(section.line)}>
+                  {section.children[0].text}
+                </MenuSubButton>
+              {/if}
+            </MenuSubItem>
+            {/if}
         {/each}
         </MenuSub>
     </Collapsible.Content>
